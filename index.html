@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Hierarchical space partition for surface reconstrution.">
+  <meta name="keywords" content="3D Reconstruction, Point Cloud, Mesh Processing, Primitive Labeling, Surface Completion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hierarchical space partition for surface reconstrution</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Hierarchical Space Partition for Surface Reconstruction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://mmwiki.cn">Minjie Tang</a>,</span>
+            <span class="author-block">
+              <a href="http://faculty.hust.edu.cn/lixiangfei/zh_CN/index.htm">Xiangfei Li</a></span>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Huazhong University of Science and Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=dt1lc6CUDg"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>3DV 2026</span>
+                </a>
+              </span>
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=dt1lc6CUDg"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://openreview.net/attachment?id=dt1lc6CUDg&name=supplementary_material"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Supp. Mat.</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/tangtangtang1995/hsr_demo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Demo-GUI</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Generating compact polygonal models from point clouds is a key problem in 3D vision and computer graphics. 
+            However, due to inherent limitations of LiDAR scanning (e.g. range constraints and occlusions), critical scene information is often missing, leading to degraded reconstruction accuracy. To address this, we propose a plane assembling strategy that effectively recovers missing details while maintaining model compactness. We classify all the planes extracted from the scene into three categories: highly visible, barely visible, and invisible. The invisible planes, which are recovered by scene structure analysis, indicate the missing details. The three types of planes correspond to the three growth priorities. Each plane grows according to the priority level, and the space is partitioned progressively, namely, the hierarchical partition. Subsequently, we generate a watertight polygonal mesh from the partition via a min-cut-based optimization. Finally, comparisons on public datasets show the effectiveness and superiority of our method against mainstream approaches.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methodology</h2>
+        <div class="publication-image" style="margin-bottom: 1.5rem;">
+          <img src="./static/images/fig1-poster.png" alt="System Architecture" style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Our algorithm takes point cloud <strong>(a)</strong> as the input and first performs the scene structure analysis <strong>(b)</strong>, which mainly includes: planes detection <strong>(b1)</strong>, planar connective analysis <strong>(b2)</strong>, boundary segments fitting <strong>(b3)</strong> and planar intersection lines calculation <strong>(b4)</strong>. Subsequently visible planes categorization <strong>(c)</strong> is performed: including visible calculation <strong>(c1)</strong> and highly/barely visible labelling <strong>(c2)</strong>. Meanwhile, we recover missing planes <strong>(d)</strong> through fitting the singular segments (i.e., the segments that are not contained by any intersection lines <strong>(d1)</strong>). After that, the 3D bounding box is hierarchically partitioned <strong>(f)</strong> using the different categories of primitives (i.e., convex hulls of highly visible planes <strong>(e1)</strong>, barely visible planes <strong>(e2)</strong> and invisible (missing) planes <strong>(e3)</strong>). Finally, based on the inside/outside labeling of polyhedral cells, a concise, watertight polygonal mesh is generated <strong>(f)</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Some Experimental Results</h2>
+        <div class="publication-image" style="margin-bottom: 1.5rem;">
+          <img src="./static/images/fig1001-poster.png" alt="Comparison with State-of-the-Art" style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate our approach with state-of-the-art methods against several quality and performance metrics, on several datasets that differ in terms of complexity, size and acquisition characteristics.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Demo-GUI</h2>
+        <div class="publication-image" style="margin-bottom: 1.5rem;">
+          <img src="./static/images/demo-gui.png" 
+               alt="GUI Demo Screenshot" 
+               style="width: 100%; height: auto; border: 1px solid #bbb; border-radius: 5px;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We provide an executable application with a <strong>Graphical User Interface (GUI)</strong> and a <strong>real-time rendering window</strong>, which implements the proposed algorithm. This tool allows users to visualize the hierarchical partition process and the final mesh generation interactively. For detailed operation instructions, please refer to the documentation included in the provided <code>.zip</code> archive.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div> </section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{tang2026hsr,
+  author    = {Minjie, Tang and Xiangfei, Li},
+  title     = {Hierarchical Space Partition for Surface Reconstrution},
+  journal   = {3DV},
+  year      = {2026},
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
