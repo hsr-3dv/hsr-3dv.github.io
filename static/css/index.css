@@ -155,3 +155,19 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.publication-image {
+  margin-bottom: 1.5rem;
+}
+
+.figure-img {
+  width: 100%;
+  height: auto;
+}
+
+.demo-img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
