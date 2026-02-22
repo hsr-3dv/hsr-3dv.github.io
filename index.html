@@ -191,58 +191,58 @@
       </div>
     </div>
 
-    <!-- GIF Results -->
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <!--h2 class="title is-3 has-text-centered">Results</h2-->
-        <div class="columns is-multiline is-centered">
-
-          <div class="column is-half">
-            <figure class="image has-text-centered">
-              <img src="./static/gifs/[1]-load-cut-merged.gif" class="result-gif" alt="Load point cloud">
-              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
-                Step 1: Load the point cloud model and configure parameters (or load preset parameters).
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="column is-half">
-            <figure class="image has-text-centered">
-              <img src="./static/gifs/[2]-structal-cut-merged.gif" class="result-gif" alt="Structure analysis">
-              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
-                Step 2: Perform scene structure analysis to extract planes, alpha shapes, and boundary line segments.
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="column is-half">
-            <figure class="image has-text-centered">
-              <img src="./static/gifs/[3]-convexhulls-cut-merged.gif" class="result-gif" alt="Generate convex hulls">
-              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
-                Step 3: Generate planar convex hulls, recover missing planes, and classify plane visibility.
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="column is-half">
-            <figure class="image has-text-centered">
-              <img src="./static/gifs/[4]-partition-cut-merged.gif" class="result-gif" alt="Hierarchical partitioning">
-              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
-                Step 4: Perform hierarchical spatial partitioning based on visibility.
-              </figcaption>
-            </figure>
-          </div>
-
-        </div>
-
-        <div class="columns is-centered mt-4">
+        <div class="columns is-centered">
           <div class="column is-four-fifths">
-            <figure class="image has-text-centered publication-image">
-              <img src="./static/gifs/[5]-surface_extract-cut-merged.gif" alt="Overall Demo" class="demo-img">
-              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
-                Step 5: Extract surfaces and output the final watertight model.
-              </figcaption>
-            </figure>
+            <div class="columns is-multiline is-centered">
+
+              <div class="column is-half">
+                <figure class="image has-text-centered">
+                  <video src="./static/videos/[1]-load.mp4" class="result-gif" autoplay loop muted playsinline style="pointer-events: none; width: 100%;"></video>
+                  <figcaption class="gif-caption mt-2 has-text-weight-bold">
+                    Step 1: Load the point cloud model and configure parameters (or load preset parameters).
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="column is-half">
+                <figure class="image has-text-centered">
+                  <video src="./static/videos/[2]-sa.mp4" class="result-gif" autoplay loop muted playsinline style="pointer-events: none; width: 100%;"></video>
+                  <figcaption class="gif-caption mt-2 has-text-weight-bold">
+                    Step 2: Perform scene structure analysis to extract planes, alpha shapes, and boundary line segments.
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="column is-half">
+                <figure class="image has-text-centered">
+                  <video src="./static/videos/[3]-ch.mp4" class="result-gif" autoplay loop muted playsinline style="pointer-events: none; width: 100%;"></video>
+                  <figcaption class="gif-caption mt-2 has-text-weight-bold">
+                    Step 3: Generate planar convex hulls, recover missing planes, and classify plane visibility.
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="column is-half">
+                <figure class="image has-text-centered">
+                  <video src="./static/videos/[4]-hsp.mp4" class="result-gif" autoplay loop muted playsinline style="pointer-events: none; width: 100%;"></video>
+                  <figcaption class="gif-caption mt-2 has-text-weight-bold">
+                    Step 4: Perform hierarchical spatial partitioning based on visibility.
+                  </figcaption>
+                </figure>
+              </div>
+
+            </div>
+
+            <div class="columns is-centered mt-4">
+              <div class="column is-four-fifths">
+                <figure class="image has-text-centered publication-image">
+                  <video src="./static/videos/[5]-se.mp4" class="demo-img" autoplay loop muted playsinline style="pointer-events: none; width: 100%;"></video>
+                  <figcaption class="gif-caption mt-2 has-text-weight-bold">
+                    Step 5: Extract surfaces and output the final watertight model.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
           </div>
         </div>
 
