@@ -171,3 +171,10 @@ body {
   border: 1px solid #bbb;
   border-radius: 5px;
 }
+
+.gif-caption {
+  font-size: 0.9rem; /* 调整这个数值，比如 0.85rem 或 14px */
+  font-weight: bold; /* 加粗 */
+  line-height: 1.4;  /* 稍微收紧一点行高，让多行文字更紧凑 */
+  color: #363636;    /* 可选：设置一个稍微深一点的颜色让加粗更清晰 */
+}

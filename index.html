@@ -100,7 +100,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Demo-GUI</span>
+                  <span>Code(release pending review)</span>
                   </a>
               </span>
             </div>
@@ -185,9 +185,67 @@
 
         <div class="content has-text-justified">
           <p>
-            We provide an executable application with a <strong>Graphical User Interface (GUI)</strong> and a <strong>real-time rendering window</strong>, which implements the proposed algorithm. This tool allows users to visualize the hierarchical partition process and the final mesh generation interactively. For detailed operation instructions, please refer to the documentation included in the provided <code>.zip</code> archive.
+            We provide an executable application with a <strong>Graphical User Interface (GUI)</strong> and a <strong>real-time rendering window</strong>, which implements the proposed algorithm. This tool allows users to visualize the hierarchical partition process and the final mesh generation interactively. For detailed operation instructions, please refer to the documentation included in the provided <code>.zip</code> archive. All source code will be made publicly available after the review process.
           </p>
         </div>
+      </div>
+    </div>
+
+    <!-- GIF Results -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <!--h2 class="title is-3 has-text-centered">Results</h2-->
+        <div class="columns is-multiline is-centered">
+
+          <div class="column is-half">
+            <figure class="image has-text-centered">
+              <img src="./static/gifs/[1]-load-cut-merged.gif" class="result-gif" alt="Load point cloud">
+              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
+                Step 1: Load the point cloud model and configure parameters (or load preset parameters).
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="column is-half">
+            <figure class="image has-text-centered">
+              <img src="./static/gifs/[2]-structal-cut-merged.gif" class="result-gif" alt="Structure analysis">
+              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
+                Step 2: Perform scene structure analysis to extract planes, alpha shapes, and boundary line segments.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="column is-half">
+            <figure class="image has-text-centered">
+              <img src="./static/gifs/[3]-convexhulls-cut-merged.gif" class="result-gif" alt="Generate convex hulls">
+              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
+                Step 3: Generate planar convex hulls, recover missing planes, and classify plane visibility.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="column is-half">
+            <figure class="image has-text-centered">
+              <img src="./static/gifs/[4]-partition-cut-merged.gif" class="result-gif" alt="Hierarchical partitioning">
+              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
+                Step 4: Perform hierarchical spatial partitioning based on visibility.
+              </figcaption>
+            </figure>
+          </div>
+
+        </div>
+
+        <div class="columns is-centered mt-4">
+          <div class="column is-four-fifths">
+            <figure class="image has-text-centered publication-image">
+              <img src="./static/gifs/[5]-surface_extract-cut-merged.gif" alt="Overall Demo" class="demo-img">
+              <figcaption class="gif-caption mt-2 has-text-weight-bold ">
+                Step 5: Extract surfaces and output the final watertight model.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
       </div>
     </div>
 
